@@ -2,8 +2,8 @@
 #:import MapView kivy.garden.mapview.MapView
 
 <DefMapView>:
-    lat: 40.638586
-    lon: -8.654022
+    lat: 10.0
+    lon: 10.0
     zoom: 17
     map_source: "osm"
     pause_on_action: False
@@ -11,4 +11,4 @@
     on_zoom:
         self.get_controls_on_zoom()
     on_lat:
-        self.get_controls_on_lat()
+        self.on_start()
