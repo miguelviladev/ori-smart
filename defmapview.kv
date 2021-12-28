@@ -4,12 +4,11 @@
 <DefMapView>:
     lat: 40.638586
     lon: -8.654022
-    zoom: 18
+    zoom: 17
+    map_source: "osm"
     pause_on_action: False
     double_tap_zoom: True
     on_zoom:
-        self.zoom = 15 if self.zoom < 15 else self.zoom
+        self.get_controls_on_zoom()
     on_lat:
-        self.start_getting_controls_in_fov()
-    on_lon:
-        self.start_getting_controls_in_fov()
+        self.get_controls_on_lat()
