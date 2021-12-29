@@ -24,5 +24,7 @@ class DefMapView(MapView):
     def add_control_marker(self, control):
         lat, lon = control["lat"], control["lon"]
         control_marker = ControlMarker(lat=lat, lon=lon, source="./def_control_marker.png")
+        if control["type"] == "start": control_marker.source = "./start_control_marker.png"
+        if control["type"] == "finish": control_marker.source = "./finish_control_marker.png"
         self.add_marker(control_marker)
         #self.control_ids.append(control["id"])
