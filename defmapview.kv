@@ -1,0 +1,9 @@
+#:kivy 2.0.0
+#:import MapView kivy.garden.mapview.MapView
+
+<DefMapView>:
+    lat: 40.638586
+    lon: -8.654022
+    zoom: 18
+    on_zoom:
+        self.zoom = 16 if self.zoom < 16 else self.zoom
