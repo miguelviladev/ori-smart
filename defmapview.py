@@ -36,9 +36,10 @@ class DefMapView(MapView):
     def add_cmarker(self, control):
         marker = ControlMarker(lat=control["lat"], lon=control["lon"], anchor_y = 0.5, anchor_x = 0.5)
         # Chooses the symbol based on its type
-        if control["type"] == "start": marker.source = "./start_control_marker.png"
-        if control["type"] == "finish": marker.source = "./finish_control_marker.png"
-        if control["type"] == "control": marker.source = "./def_control_marker.png"
+        if control["type"] == "start": marker.source = "./markers/start_control_marker.png"
+        if control["type"] == "finish": marker.source = "./markers/finish_control_marker.png"
+        if control["type"] == "control":
+            marker.source = f'./markers/{control["id"]}_control_marker.png'
         # Chooses the size based on zoom levels
         if self.zoom > 18:
             marker.size = [50/(0.018*self.zoom), 50/(0.018*self.zoom)]
